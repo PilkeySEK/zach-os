@@ -8,7 +8,7 @@ mkdir -p isodir/boot/grub
 
 cp sysroot/boot/zachos.kernel isodir/boot/zachos.kernel
 cat > isodir/boot/grub/grub.cfg << EOF
-menuentry "zachos" {
+menuentry "Zach OS 1 STS" {
 	multiboot /boot/zachos.kernel
 }
 EOF
