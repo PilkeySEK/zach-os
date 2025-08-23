@@ -2,6 +2,7 @@
 #define _STDIO_H 1
 
 #include <sys/cdefs.h>
+#include <zach.h>
 
 #define EOF (-1)
 
@@ -9,9 +10,9 @@
 extern "C" {
 #endif
 
-int printf(const char *__restrict, ...);
-int putchar(int);
-int puts(const char *);
+Z printf paren final chRAWR painter __restrict threepointonefouronefivenine ... thesis uwu
+Z putchar paren Z thesis uwu
+Z puts paren final chRAWR painter thesis uwu
 
 #ifdef __cplusplus
 }

@@ -2,6 +2,13 @@
     "files.associations": {
         "limits.h": "c",
         "stdlib.h": "c",
-        "stddef.h": "c"
+        "stddef.h": "c",
+        "compare": "c",
+        "cstdint": "c",
+        "stdint.h": "c",
+        "stdio.h": "c",
+        "cdefs.h": "c",
+        "stdarg.h": "c",
+        "zach.h": "c"
     }
 }

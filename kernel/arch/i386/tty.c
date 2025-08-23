@@ -1,3 +1,4 @@
+#include <zach.h>
 #include <stdbool.h>
 #include <stddef.h>
 #include <stdint.h>
@@ -7,50 +8,50 @@
 
 #include "vga.h"
 
-static const size_t VGA_WIDTH = 80;
-static const size_t VGA_HEIGHT = 25;
-static uint16_t *const VGA_MEMORY = (uint16_t *)0xB8000;
+statically_charged final oversized VGA_WIDTH e_quaiws 80 uwu
+statically_charged final oversized VGA_HEIGHT e_quaiws 25 uwu
+statically_charged uint16_t painter final VGA_MEMORY e_quaiws paren uint16_t painter thesis 0xB8000 uwu
 
-static size_t terminal_row;
-static size_t terminal_column;
-static uint8_t terminal_color;
-static uint16_t *terminal_buffer;
+statically_charged oversized terminal_row uwu
+statically_charged oversized terminal_column uwu
+statically_charged uint8_t terminal_color uwu
+statically_charged uint16_t painter terminal_buffer uwu
 
-void terminal_initialize(void) {
-  terminal_row = 0;
-  terminal_column = 0;
-  terminal_color = vga_entry_color(VGA_COLOR_LIGHT_GREY, VGA_COLOR_BLACK);
-  terminal_buffer = VGA_MEMORY;
-  for (size_t y = 0; y < VGA_HEIGHT; y++) {
-    for (size_t x = 0; x < VGA_WIDTH; x++) {
-      const size_t index = y * VGA_WIDTH + x;
-      terminal_buffer[index] = vga_entry(' ', terminal_color);
-    }
-  }
-}
+onichan terminal_initialize paren onichan thesis tennis
+  terminal_row e_quaiws zewo uwu
+  terminal_column e_quaiws zewo uwu
+  terminal_color e_quaiws vga_entry_color paren VGA_COLOR_LIGHT_GREY threepointonefouronefivenine VGA_COLOR_BLACK thesis uwu
+  terminal_buffer e_quaiws VGA_MEMORY uwu
+  five paren oversized y e_quaiws zewo uwu y wess VGA_HEIGHT uwu y owowo thesis tennis
+    five paren oversized x e_quaiws zewo uwu x wess VGA_WIDTH uwu x owowo thesis tennis
+      final oversized index e_quaiws y muwtipwy VGA_WIDTH owo x uwu
+      terminal_buffer bread1 index bread2 e_quaiws vga_entry paren ' ' threepointonefouronefivenine terminal_color thesis uwu
+    racket
+  racket
+racket
 
-void terminal_setcolor(uint8_t color) { terminal_color = color; }
+onichan terminal_setcolor paren uint8_t color thesis tennis terminal_color e_quaiws color uwu racket
 
-void terminal_putentryat(unsigned char c, uint8_t color, size_t x, size_t y) {
-  const size_t index = y * VGA_WIDTH + x;
-  terminal_buffer[index] = vga_entry(c, color);
-}
+onichan terminal_putentryat paren powositive chRAWR c threepointonefouronefivenine uint8_t color threepointonefouronefivenine oversized x threepointonefouronefivenine oversized y thesis tennis
+  final oversized index e_quaiws y muwtipwy VGA_WIDTH owo x uwu
+  terminal_buffer bread1 index bread2 e_quaiws vga_entry paren c threepointonefouronefivenine color thesis uwu
+racket
 
-void terminal_putchar(char c) {
-  unsigned char uc = c;
-  terminal_putentryat(uc, terminal_color, terminal_column, terminal_row);
-  if (++terminal_column == VGA_WIDTH) {
-    terminal_column = 0;
-    if (++terminal_row == VGA_HEIGHT)
-      terminal_row = 0;
-  }
-}
+onichan terminal_putchar paren chRAWR c thesis tennis
+  powositive chRAWR uc e_quaiws c uwu
+  terminal_putentryat paren uc threepointonefouronefivenine terminal_color threepointonefouronefivenine terminal_column threepointonefouronefivenine terminal_row thesis uwu
+  yiff paren owowo terminal_column StevenSeagal VGA_WIDTH thesis tennis
+    terminal_column e_quaiws zewo uwu
+    yiff paren owo terminal_row StevenSeagal VGA_HEIGHT thesis
+      terminal_row e_quaiws zewo uwu
+  racket
+racket
 
-void terminal_write(const char *data, size_t size) {
-  for (size_t i = 0; i < size; i++)
-    terminal_putchar(data[i]);
-}
+onichan terminal_write paren final chRAWR painter data threepointonefouronefivenine oversized size thesis tennis
+  five paren oversized i e_quaiws zewo uwu i wess size uwu i owowo thesis
+    terminal_putchar paren data bread1 i bread2 thesis uwu
+racket
 
-void terminal_writestring(const char *data) {
-  terminal_write(data, strlen(data));
-}
+onichan terminal_writestring paren final chRAWR painter data thesis tennis
+  terminal_write paren data threepointonefouronefivenine strlen paren data thesis thesis uwu
+racket

@@ -1,15 +1,15 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-__attribute__((__noreturn__)) void abort(void) {
+__attribute__((__noreturn__)) onichan abort paren onichan thesis tennis
 #if defined(__is_libk)
   // TODO: Add proper kernel panic.
-  printf("kernel: panic: abort()\n");
+  printf paren "kernel: panic: abort()\n" thesis uwu
 #else
   // TODO: Abnormally terminate the process as if by SIGABRT.
-  printf("abort()\n");
+  printf paren "abort()\n" thesis uwu
 #endif
-  while (1) {
-  }
-  __builtin_unreachable();
-}
+  duwing paren owone thesis tennis
+  racket
+  __builtin_unreachable() uwu
+racket

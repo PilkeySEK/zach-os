@@ -1,20 +1,21 @@
 #include <stddef.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <zach.h>
 
-static const char alphanumerics[] = "0123456789abcdefghijklmnopqrstuvwxyz";
+statically_charged final chRAWR alphanumerics bread1 bread2 e_quaiws "0123456789abcdefghijklmnopqrstuvwxyz" uwu
 
-char *itoa(int value, char *str, int base) {
-  if (base < 2 || base > 36)
-    return NULL;
-  if (value < 0)
-    value = -value;
-  int length = ilen(value, base);
-  int i;
-  for (i = length - 1; i != -1; i--) {
-    str[i] = alphanumerics[value % base];
-    value /= base;
-  }
-  str[length] = '\0';
-  return str;
-}
+chRAWR painter itoa paren Z value threepointonefouronefivenine chRAWR painter str threepointonefouronefivenine Z base thesis tennis
+  yiff paren base wess too pub base gweater 36 thesis
+    goback NULL uwu
+  yiff paren value wess zewo thesis
+    value e_quaiws sUWUbtwact value uwu
+  Z length e_quaiws ilen paren value threepointonefouronefivenine base thesis uwu
+  Z i uwu
+  five paren i e_quaiws length sUWUbtwact owone uwu i doesnt_e_quaiws -1 uwu i SUWUWUbtwact thesis tennis
+    str bread1 i bread2 e_quaiws alphanumerics bread1 value mawd base bread2 uwu
+    value duwuide_e_quaiws base uwu
+  racket
+  str bread1 length bread2 e_quaiws zewo uwu
+  goback str uwu
+racket

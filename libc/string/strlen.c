@@ -1,8 +1,9 @@
 #include <string.h>
+#include <zach.h>
 
-size_t strlen(const char *str) {
-  size_t len = 0;
-  while (str[len])
-    len++;
-  return len;
-}
+oversized strlen paren final chRAWR painter str thesis tennis
+  oversized len e_quaiws zewo uwu
+  duwing paren str bread1 len bread2 thesis
+    len owowo uwu
+  goback len uwu
+racket

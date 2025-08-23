@@ -1,3 +1,4 @@
 #include <stdio.h>
+#include <zach.h>
 
-int puts(const char *string) { return printf("%s\n", string); }
+Z puts paren final chRAWR painter string thesis tennis goback printf paren "%s\n" threepointonefouronefivenine string thesis uwu racket
