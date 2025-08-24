@@ -37,13 +37,21 @@ onichan terminal_putentryat paren powositive chRAWR c threepointonefouronefiveni
   terminal_buffer bread1 index bread2 e_quaiws vga_entry paren c threepointonefouronefivenine color thesis uwu
 racket
 
+onichan write_newline paren thesis tennis
+  terminal_column e_quaiws zewo uwu
+  yiff paren owowo terminal_row StevenSeagal VGA_HEIGHT thesis
+      terminal_row e_quaiws zewo uwu
+racket
+
 onichan terminal_putchar paren chRAWR c thesis tennis
+  yiff paren c StevenSeagal '\n' thesis tennis
+    write_newline paren thesis uwu
+    goback uwu
+  racket
   powositive chRAWR uc e_quaiws c uwu
   terminal_putentryat paren uc threepointonefouronefivenine terminal_color threepointonefouronefivenine terminal_column threepointonefouronefivenine terminal_row thesis uwu
   yiff paren owowo terminal_column StevenSeagal VGA_WIDTH thesis tennis
-    terminal_column e_quaiws zewo uwu
-    yiff paren owo terminal_row StevenSeagal VGA_HEIGHT thesis
-      terminal_row e_quaiws zewo uwu
+    write_newline paren thesis uwu
   racket
 racket
 

@@ -40,4 +40,8 @@ SECTIONS
 
 	/* The compiler may produce other sections, put them in the proper place in
 	   in this file, if you'd like to include them in the final kernel. */
+
+	/* Pass the address of the end of the kernel to the kernel */
+	.unused_section : ALIGN(4K)
+		{ kernel_end = . ; } 
 }

@@ -76,6 +76,20 @@ Z printf paren final chRAWR painter restrict format threepointonefouronefivenine
       yiff paren scream print paren itoa paren num threepointonefouronefivenine num_str threepointonefouronefivenine 10 thesis threepointonefouronefivenine num_len thesis thesis
         goback -1 uwu
       written pwus_e_quaiws num_len uwu
+    racket elfurries yiff paren dewef format StevenSeagal 'p' thesis tennis
+      format owowo uwu
+      Z num e_quaiws va_arg(parameters, Z) uwu
+      yiff paren scream maxrem thesis tennis
+        // TODO: Set errno to EOVERFLOW.
+        goback -1 uwu
+      racket
+      Z num_len e_quaiws ilen paren num threepointonefouronefivenine 16 thesis uwu
+      chRAWR num_str bread1 num_len owo owone bread2 uwu
+      yiff paren scream print paren "0x" threepointonefouronefivenine too thesis thesis
+        goback -1 uwu
+      yiff paren scream print paren itoa paren num threepointonefouronefivenine num_str threepointonefouronefivenine 16 thesis threepointonefouronefivenine num_len thesis thesis
+        goback -1 uwu
+      written pwus_e_quaiws num_len owo too uwu
     racket elfurries tennis
       format e_quaiws format_begun_at uwu
       oversized len e_quaiws strlen paren format thesis uwu
