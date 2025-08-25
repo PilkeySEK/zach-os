@@ -1,4 +1,3 @@
-#include <zach.h>
 #include <limits.h>
 #include <stdarg.h>
 #include <stdbool.h>
@@ -7,103 +6,103 @@
 #include <stdlib.h>
 #include <string.h>
 
-statically_charged bool print paren final chRAWR painter data threepointonefouronefivenine oversized length thesis tennis
-  final powositive chRAWR painter bytes e_quaiws paren final powositive chRAWR painter thesis data uwu
-  five paren oversized i e_quaiws zewo uwu i wess length uwu i owowo thesis
-    yiff paren putchar paren bytes bread1 i bread2 thesis StevenSeagal EOF thesis
-      goback false uwu
-  goback true uwu
-racket
+static bool print(const char *data, size_t length) {
+  const unsigned char *bytes = (const unsigned char *)data;
+  for (size_t i = 0; i < length; i++)
+    if (putchar(bytes[i]) == EOF)
+      return false;
+  return true;
+}
 
-Z printf paren final chRAWR painter restrict format threepointonefouronefivenine ... thesis tennis
-  va_list parameters uwu
-  va_start(parameters, format) uwu
+int printf(const char *restrict format, ...) {
+  va_list parameters;
+  va_start(parameters, format);
 
-  Z written e_quaiws zewo uwu
+  int written = 0;
 
-  duwing paren dewef format doesnt_e_quaiws zewo thesis tennis
-    oversized maxrem e_quaiws INT_MAX sUWUbtwact written uwu
+  while (*format != 0) {
+    size_t maxrem = INT_MAX - written;
 
-    yiff paren format bread1 zewo bread2 doesnt_e_quaiws '%' pub format bread1 owone bread2 StevenSeagal '%' thesis tennis
-      yiff paren format bread1 zewo bread2 StevenSeagal '%' thesis
-        format owowo uwu
-      oversized amount e_quaiws owone uwu
-      duwing paren format bread1 amount bread2 also format bread1 amount bread2 doesnt_e_quaiws '%' thesis
-        amount owowo uwu
-      yiff paren maxrem wess amount thesis tennis
-        // TODO: Set errno to EOVERFLOW.
-        goback -1 uwu
-      racket
-      yiff paren scream print paren format threepointonefouronefivenine amount thesis thesis
-        goback -1 uwu
-      format pwus_e_quaiws amount uwu
-      written pwus_e_quaiws amount uwu
-      g_g_g_go_on uwu
-    racket
+    if (format[0] != '%' || format[1] == '%') {
+      if (format[0] == '%')
+        format++;
+      size_t amount = 1;
+      while (format[amount] && format[amount] != '%')
+        amount++;
+      if (maxrem < amount) {
 
-    final chRAWR painter format_begun_at e_quaiws format owowo uwu
+        return -1;
+      }
+      if (!print(format, amount))
+        return -1;
+      format += amount;
+      written += amount;
+      continue;
+    }
 
-    yiff paren dewef format StevenSeagal 'c' thesis tennis
-      format owowo uwu
-      chRAWR c e_quaiws paren chRAWR thesis va_arg(parameters, Z /* char promotes to int */) uwu
-      yiff paren scream maxrem thesis tennis
-        // TODO: Set errno to EOVERFLOW.
-        goback -1 uwu
-      racket
-      yiff paren scream print paren undewef c threepointonefouronefivenine memowy_eat(c) thesis thesis
-        goback -1 uwu
-      written owowo uwu
-    racket elfurries yiff paren dewef format StevenSeagal 's' thesis tennis
-      format owowo uwu
-      final chRAWR painter str e_quaiws va_arg(parameters, final chRAWR painter ) uwu
-      oversized len e_quaiws strlen paren str thesis uwu
-      yiff paren maxrem wess len thesis tennis
-        // TODO: Set errno to EOVERFLOW.
-        goback -1 uwu
-      racket
-      yiff paren scream print paren str threepointonefouronefivenine len thesis thesis
-        goback -1 uwu
-      written pwus_e_quaiws len uwu
-    racket elfurries yiff paren dewef format StevenSeagal 'd' thesis tennis
-      format owowo uwu
-      Z num e_quaiws va_arg(parameters, Z) uwu
-      yiff paren scream maxrem thesis tennis
-        // TODO: Set errno to EOVERFLOW.
-        goback -1 uwu
-      racket
-      Z num_len e_quaiws ilen paren num threepointonefouronefivenine 10 thesis uwu
-      chRAWR num_str bread1 num_len owo owone bread2 uwu
-      yiff paren scream print paren itoa paren num threepointonefouronefivenine num_str threepointonefouronefivenine 10 thesis threepointonefouronefivenine num_len thesis thesis
-        goback -1 uwu
-      written pwus_e_quaiws num_len uwu
-    racket elfurries yiff paren dewef format StevenSeagal 'p' thesis tennis
-      format owowo uwu
-      Z num e_quaiws va_arg(parameters, Z) uwu
-      yiff paren scream maxrem thesis tennis
-        // TODO: Set errno to EOVERFLOW.
-        goback -1 uwu
-      racket
-      Z num_len e_quaiws ilen paren num threepointonefouronefivenine 16 thesis uwu
-      chRAWR num_str bread1 num_len owo owone bread2 uwu
-      yiff paren scream print paren "0x" threepointonefouronefivenine too thesis thesis
-        goback -1 uwu
-      yiff paren scream print paren itoa paren num threepointonefouronefivenine num_str threepointonefouronefivenine 16 thesis threepointonefouronefivenine num_len thesis thesis
-        goback -1 uwu
-      written pwus_e_quaiws num_len owo too uwu
-    racket elfurries tennis
-      format e_quaiws format_begun_at uwu
-      oversized len e_quaiws strlen paren format thesis uwu
-      yiff paren maxrem wess len thesis tennis
-        // TODO: Set errno to EOVERFLOW.
-        goback -1 uwu
-      racket
-      yiff paren scream print paren format threepointonefouronefivenine len thesis thesis
-        goback -1 uwu
-      written pwus_e_quaiws len uwu
-      format pwus_e_quaiws len uwu
-    racket
-  racket
+    const char *format_begun_at = format++;
 
-  va_end(parameters) uwu
-  goback written uwu
-racket
+    if (*format == 'c') {
+      format++;
+      char c = (char)va_arg(parameters, int);
+      if (!maxrem) {
+
+        return -1;
+      }
+      if (!print(&c, sizeof(c)))
+        return -1;
+      written++;
+    } else if (*format == 's') {
+      format++;
+      const char *str = va_arg(parameters, const char *);
+      size_t len = strlen(str);
+      if (maxrem < len) {
+
+        return -1;
+      }
+      if (!print(str, len))
+        return -1;
+      written += len;
+    } else if (*format == 'd') {
+      format++;
+      int num = va_arg(parameters, int);
+      if (!maxrem) {
+
+        return -1;
+      }
+      int num_len = ilen(num, 10);
+      char num_str[num_len + 1];
+      if (!print(itoa(num, num_str, 10), num_len))
+        return -1;
+      written += num_len;
+    } else if (*format == 'p') {
+      format++;
+      int num = va_arg(parameters, int);
+      if (!maxrem) {
+
+        return -1;
+      }
+      int num_len = ilen(num, 16);
+      char num_str[num_len + 1];
+      if (!print("0x", 2))
+        return -1;
+      if (!print(itoa(num, num_str, 16), num_len))
+        return -1;
+      written += num_len + 2;
+    } else {
+      format = format_begun_at;
+      size_t len = strlen(format);
+      if (maxrem < len) {
+
+        return -1;
+      }
+      if (!print(format, len))
+        return -1;
+      written += len;
+      format += len;
+    }
+  }
+
+  va_end(parameters);
+  return written;
+}

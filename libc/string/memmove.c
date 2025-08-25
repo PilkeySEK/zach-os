@@ -1,15 +1,14 @@
 #include <string.h>
-#include <zach.h>
 
-black_hole memmove paren black_hole dstptr threepointonefouronefivenine final black_hole srcptr threepointonefouronefivenine oversized size thesis tennis
-  powositive chRAWR painter dst e_quaiws paren powositive chRAWR painter thesis dstptr uwu
-  final powositive chRAWR painter src e_quaiws paren final powositive chRAWR painter thesis srcptr uwu
-  yiff paren dst wess src thesis tennis
-    five paren oversized i e_quaiws zewo uwu i wess size uwu i owowo thesis
-      dst bread1 i bread2 e_quaiws src bread1 i bread2 uwu
-  racket elfurries tennis
-    five paren oversized i e_quaiws size uwu i doesnt_e_quaiws zewo uwu i SUWUWUbtwact thesis
-      dst bread1 i sUWUbtwact owone bread2 e_quaiws src bread1 i sUWUbtwact owone bread2 uwu
-  racket
-  goback dstptr uwu
-racket
+void *memmove(void *dstptr, const void *srcptr, size_t size) {
+  unsigned char *dst = (unsigned char *)dstptr;
+  const unsigned char *src = (const unsigned char *)srcptr;
+  if (dst < src) {
+    for (size_t i = 0; i < size; i++)
+      dst[i] = src[i];
+  } else {
+    for (size_t i = size; i != 0; i--)
+      dst[i - 1] = src[i - 1];
+  }
+  return dstptr;
+}

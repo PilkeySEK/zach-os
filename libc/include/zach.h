@@ -61,8 +61,9 @@
 // Added:
 
 // causes problems for some reason, disabled for now
-// #define rite_pixews_wapper(foam_mat, ...) printf(foam_mat __VA_OPT__(,) __VA_ARGS__)
-#define black_hole void*
+// #define rite_pixews_wapper(foam_mat, ...) printf(foam_mat __VA_OPT__(,)
+// __VA_ARGS__)
+#define black_hole void *
 #define memowy_eat(objewct) sizeof(objewct)
 #define dewef *
 #define undewef &
