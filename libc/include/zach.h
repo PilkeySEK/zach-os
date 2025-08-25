@@ -1,3 +1,6 @@
+// disable for now
+#if 0
+
 /*
     The holy zach
 */
@@ -102,3 +105,5 @@
 void zach(void);
 
 #endif // _ZACH_H
+
+#endif
