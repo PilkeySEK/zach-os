@@ -4,6 +4,7 @@
 #include <stdlib.h>
 
 #include <kernel/heap.h>
+#include <kernel/idt.h>
 #include <kernel/multiboot.h>
 #include <kernel/tty.h>
 
@@ -12,6 +13,8 @@ extern uint32_t kernel_start;
 
 void kernel_main(multiboot_info_t *mbd, uint32_t magic) {
   terminal_initialize();
+  idt_init();
+  volatile int x = 50 / 0;
 
   if (magic != MULTIBOOT_BOOTLOADER_MAGIC) {
     printf("Failed to boot: Multiboot magic number is invalid!");
