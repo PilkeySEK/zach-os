@@ -9,9 +9,12 @@
 
 extern uint32_t kernel_end;
 extern uint32_t kernel_start;
+// extern void _setup_gdt();
 
 void kernel_main(multiboot_info_t *mbd, uint32_t magic) {
   terminal_initialize();
+  // _setup_gdt();
+  // while(1) {}
 
   if (magic != MULTIBOOT_BOOTLOADER_MAGIC) {
     printf("Failed to boot: Multiboot magic number is invalid!");
