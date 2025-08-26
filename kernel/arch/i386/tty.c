@@ -47,6 +47,13 @@ void terminal_putchar(char c) {
     write_newline();
     return;
   }
+  if (c == '\0') {
+    uint8_t previous_color = terminal_color;
+    terminal_setcolor(VGA_COLOR_RED);
+    terminal_putchar('0');
+    terminal_setcolor(previous_color);
+    return;
+  }
   unsigned char uc = c;
   terminal_putentryat(uc, terminal_color, terminal_column, terminal_row);
   if (++terminal_column == VGA_WIDTH) {
