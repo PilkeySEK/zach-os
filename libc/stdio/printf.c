@@ -89,6 +89,18 @@ int printf(const char *restrict format, ...) {
       if (!print(itoa(num, num_str, 16), num_len))
         return -1;
       written += num_len + 2;
+    } else if (*format == 'b') {
+      format++;
+      int num = va_arg(parameters, int);
+      if (!maxrem) {
+
+        return -1;
+      }
+      int num_len = ilen(num, 2);
+      char num_str[num_len + 1];
+      if (!print(itoa(num, num_str, 2), num_len))
+        return -1;
+      written += num_len;
     } else {
       format = format_begun_at;
       size_t len = strlen(format);
