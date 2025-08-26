@@ -4,4 +4,4 @@ set -e
 set -e
 . ./iso.sh
 
-qemu-system-$(./target-triplet-to-arch.sh $HOST) -cdrom zachos.iso
+qemu-system-$(./target-triplet-to-arch.sh $HOST) -cdrom zachos.iso -m 1024M

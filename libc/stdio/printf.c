@@ -101,6 +101,60 @@ int printf(const char *restrict format, ...) {
       if (!print(itoa(num, num_str, 2), num_len))
         return -1;
       written += num_len;
+    } else if (*format == 'u') {
+      format++;
+      if (*format == 'l') {
+        format++;
+        int base = 10;
+        if (*format == 'd') {
+          base = 10;
+        } else if (*format == 'p') {
+          base = 16;
+        } else if (*format == 'b') {
+          base = 2;
+        }
+        format++;
+        uint64_t num = va_arg(parameters, uint64_t);
+        if (!maxrem) {
+
+          return -1;
+        }
+        int num_len = uint64_len(num, base);
+        char num_str[num_len + 1];
+        if (base == 16) {
+          if (!print("0x", 2))
+            return -1;
+        }
+        if (!print(uint64_to_string(num, num_str, base), num_len))
+          return -1;
+        written += num_len + (base == 16 ? 2 : 0);
+      } else if (*format == 'p') {
+        format++;
+        unsigned int num = va_arg(parameters, unsigned int);
+        if (!maxrem) {
+
+          return -1;
+        }
+        int num_len = uint64_len((uint64_t)num, 16);
+        char num_str[num_len + 1];
+        if (!print("0x", 2))
+          return -1;
+        if (!print(uint64_to_string(num, num_str, 16), num_len))
+          return -1;
+        written += num_len + 2;
+      } else if (*format == 'd') {
+        format++;
+        unsigned int num = va_arg(parameters, unsigned int);
+        if (!maxrem) {
+
+          return -1;
+        }
+        int num_len = uint64_len((uint64_t)num, 10);
+        char num_str[num_len + 1];
+        if (!print(uint64_to_string(num, num_str, 10), num_len))
+          return -1;
+        written += num_len;
+      }
     } else {
       format = format_begun_at;
       size_t len = strlen(format);

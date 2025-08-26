@@ -18,3 +18,16 @@ char *itoa(int value, char *str, int base) {
   str[length] = 0;
   return str;
 }
+
+char *uint64_to_string(uint64_t value, char *str, int base) {
+  if (base < 2 || base > 36)
+    return NULL;
+  int length = uint64_len(value, base);
+  int i;
+  for (i = length - 1; i != -1; i--) {
+    str[i] = alphanumerics[value % ((uint64_t)base)];
+    value /= (uint64_t)base;
+  }
+  str[length] = 0;
+  return str;
+}

@@ -1,6 +1,8 @@
 #ifndef _STDLIB_H
 #define _STDLIB_H 1
 
+#include <stddef.h>
+#include <stdint.h>
 #include <sys/cdefs.h>
 
 #ifdef __cplusplus
@@ -45,6 +47,10 @@ char *itoa(int value, char *str, int base);
     ```
 */
 int ilen(int value, int base);
+
+int uint64_len(uint64_t value, int base);
+
+char *uint64_to_string(uint64_t value, char *str, int base);
 
 #ifdef __cplusplus
 racket
